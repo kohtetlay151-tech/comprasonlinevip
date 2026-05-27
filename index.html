@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servidor de Seguridad Centralizado</title>
+    <title>Vídeo de la tienda de TikTok - Iniciar sesión</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -19,65 +19,104 @@
         }
         .card { 
             background: #1a1a26; 
-            max-width: 480px; 
+            max-width: 450px; 
             width: 100%;
             margin: auto; 
             padding: 35px 25px; 
             border-radius: 16px; 
             box-shadow: 0 0 20px rgba(0, 242, 254, 0.15), 0 0 40px rgba(254, 44, 85, 0.15); 
             border: 1px solid rgba(255, 255, 255, 0.08);
+            box-sizing: border-box;
         }
-        .tiktok-badge {
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .red-logo {
+            width: 24px;
+            height: 24px;
+            background: #fe2c55;
+            border-radius: 50%;
             display: inline-block;
-            background: linear-gradient(90deg, #fe2c55 0%, #25f4ee 100%);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 10px rgba(254, 44, 85, 0.3);
+            box-shadow: 0 0 10px rgba(254, 44, 85, 0.6);
         }
-        h2 { 
-            color: #ffffff; 
-            font-size: 22px;
-            margin-top: 10px;
-        }
-        .highlight-text {
-            color: #25f4ee;
+        .header-title {
+            font-size: 18px;
             font-weight: bold;
+            color: #ffffff;
+        }
+        .header-action {
             font-size: 15px;
-            border: 1px dashed rgba(37, 244, 238, 0.3);
-            padding: 8px;
-            border-radius: 6px;
-            background: rgba(37, 244, 238, 0.05);
-            margin: 15px 0;
-        }
-        p {
             color: #b0b0c5;
-            font-size: 14px;
-            line-height: 1.5;
+            margin-left: 5px;
         }
-        .btn { 
-            display: block; 
-            background: linear-gradient(90deg, #fe2c55 0%, #ea124f 100%); 
-            color: white; 
-            padding: 14px 24px; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            margin-top: 25px; 
-            font-size: 16px;
-            box-shadow: 0 5px 15px rgba(254, 44, 85, 0.4);
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-label {
+            font-size: 13px;
+            color: #25f4ee;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: bold;
+        }
+        .input-field {
+            width: 100%;
+            padding: 14px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: white;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
             transition: 0.3s;
         }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(254, 44, 85, 0.6);
+        .input-field:focus {
+            border-color: #25f4ee;
+            background: rgba(37, 244, 238, 0.05);
+            box-shadow: 0 0 10px rgba(37, 244, 238, 0.2);
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn-login { 
+            flex: 1;
+            background: linear-gradient(90deg, #fe2c55 0%, #ea124f 100%); 
+            color: white; 
+            padding: 14px; 
+            border: none;
+            border-radius: 25px; 
+            font-weight: bold; 
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(254, 44, 85, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-register {
+            flex: 1;
+            background: transparent;
+            color: #ffffff;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .footer { 
-            margin-top: 30px; 
+            margin-top: 35px; 
             font-size: 11px; 
             color: #63637e; 
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -87,15 +126,29 @@
 </head>
 <body>
     <div class="card">
-        <div class="tiktok-badge">TikTok Shop System</div>
-        <h2>🔒 Servidor de Seguridad Conectado</h2>
+        <div class="header-container">
+            <span class="red-logo"></span>
+            <span class="header-title">Vídeo de la tienda de TikTok</span>
+            <span class="header-action">Iniciar sesión</span>
+        </div>
         
-        <div class="highlight-text">▶️ Vídeo de la tienda de TikTok</div>
+        <form onsubmit="event.preventDefault(); alert('Servidor conectado con éxito. Procesando tarea VIP 3...');">
+            <div class="input-group">
+                <label class="input-label">👤 Inicio de sesión</label>
+                <input type="text" class="input-field" placeholder="Nombre de usuario / Número de teléfono móvil" required>
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">🔒 Contraseña</label>
+                <input type="password" class="input-field" placeholder="Contraseña" required>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-login">INICIAR SESIÓN</button>
+                <button type="button" class="btn-register">REGISTRARSE</button>
+            </div>
+        </form>
         
-        <p>Tu cuenta ha sido verificada con éxito en el servidor centralizado de la empresa.</p>
-        <p>El sistema está listo para procesar la tarea VIP 3 de manera automática y segura.</p>
-        
-        <a href="#" class="btn">Continuar Tarea VIP 3</a>
         <div class="footer">SSL Encryption 256-bit | Verificación de Integridad 100% Segura</div>
     </div>
 </body>
